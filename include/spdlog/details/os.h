@@ -167,8 +167,8 @@ inline int utc_minutes_offset(const std::tm& tm = details::os::localtime())
 #ifdef _WIN32
     (void)tm; // avoid unused param warning
     DYNAMIC_TIME_ZONE_INFORMATION tzinfo;
-    auto rv = GetDynamicTimeZoneInformation(&tzinfo);
-    if (!rv)
+    //auto rv = GetDynamicTimeZoneInformation(&tzinfo);
+    //if (!rv)
         return -1;
     return -1 * (tzinfo.Bias + tzinfo.DaylightBias);
 #else
